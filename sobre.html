@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Landing Page = widht</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">Travel</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="#">Galeria</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+    </header>
+
+    <section class ="home">
+      <video class="video-slide active" src="video-1.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1><br><span>A Equipe</span></h1>
+        <p>Somos apaixonados por explorar o mundo e compartilhar as experiências
+           de viagem mais emocionantes e enriquecedoras com você. Aqui, a jornada começa com
+            palavras e imagens que transportam você
+           para destinos deslumbrantes, culturas fascinantes e aventuras inesquecíveis.
+           <br>
+           <br>
+           Nossa equipe é
+           composta por viajantes ávidos, contadores de histórias
+           apaixonados e curiosos incansáveis. Acreditamos que cada
+           viagem é uma oportunidade de descobrir algo novo, não apenas
+           sobre o mundo ao nosso redor, mas também sobre nós mesmos.
+           Nós não apenas visitamos lugares, mergulhamos em suas essências
+           e conectamos com as pessoas que cruzam nosso caminho. </p>
+      </div>
+      <div class="media-icons">
+        <a href="#"> <i class ="fab fa-facebook-f"></i></a>
+        <a href="#"> <i class ="fab fa-instagram"></i></a>
+        <a href="#"> <i class ="fab fa-twitter"></i></a>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+
+    const menuBtn = document.querySelector(".menu-btn")
+    const navigation = document.querySelector(".navigation")
+
+    menuBtn.addEventListener("click", () =>{
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+
+    });
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active")
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active")
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active")
+      });
+
+      btns[manual].classList.add("active")
+      slides[manual].classList.add("active")
+      contents[manual].classList.add("active")
+
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
